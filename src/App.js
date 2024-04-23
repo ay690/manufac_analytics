@@ -1,6 +1,6 @@
 import React from "react";
 import WineStats from "./component/WineStats";
-import data from "./utils/data";
+import { data } from "./utils/data";
 import "./App.css";
 
 function App() {
