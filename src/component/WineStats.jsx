@@ -1,6 +1,6 @@
 import React from 'react'
 
-const WineStats = () => {
+const WineStats = ({ data }) => {
   return (
     <div>
       WineStats page 
