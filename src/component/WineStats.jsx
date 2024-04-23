@@ -5,7 +5,8 @@ import {
   calculateMode,
   calculateGamma,
 } from "../utils/statsUtil";
-import "../App.css";
+import { Table } from "@mantine/core";
+
 
 const WineStats = ({ data }) => {
   // Calculate statistics for each class
@@ -18,63 +19,63 @@ const WineStats = ({ data }) => {
     classStats[alcoholClass].push(item);
   });
 
-  // Render Flavonoids table
+  // Render Flavonoids Table
   const renderFlavonoidsTable = () => {
     return (
-      <table className="stats-table">
-        <thead>
-          <tr>
-            <th>Measure</th>
-            <th>Class 1</th>
-            <th>Class 2</th>
-            <th>Class 3</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Flavonoids Mean</td>
+      <Table withColumnBorders withTableBorder striped highlightOnHover>
+        <Table.Thead>
+          <Table.Tr>
+            <Table.Th style={{ textAlign: "center" }}>Measure</Table.Th>
+            <Table.Th style={{ textAlign: "center" }}>Class 1</Table.Th>
+            <Table.Th style={{ textAlign: "center" }}>Class 2</Table.Th>
+            <Table.Th style={{ textAlign: "center" }}>Class 3</Table.Th>
+          </Table.Tr>
+        </Table.Thead>
+        <Table.Tbody>
+          <Table.Tr>
+            <Table.Td>Flavonoids Mean</Table.Td>
             {renderStatValues("Flavanoids", "Mean")}
-          </tr>
-          <tr>
-            <td>Flavonoids Median</td>
+          </Table.Tr>
+          <Table.Tr>
+            <Table.Td>Flavonoids Median</Table.Td>
             {renderStatValues("Flavanoids", "Median")}
-          </tr>
-          <tr>
-            <td>Flavonoids Mode</td>
+          </Table.Tr>
+          <Table.Tr>
+            <Table.Td>Flavonoids Mode</Table.Td>
             {renderStatValues("Flavanoids", "Mode")}
-          </tr>
-        </tbody>
-      </table>
+          </Table.Tr>
+        </Table.Tbody>
+      </Table>
     );
   };
 
-  // Render Gamma table
+  // Render Gamma Table
   const renderGammaTable = () => {
     return (
-      <table className="stats-table">
-        <thead>
-          <tr>
-            <th>Measure</th>
-            <th>Class 1</th>
-            <th>Class 2</th>
-            <th>Class 3</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Gamma Mean</td>
+      <Table withColumnBorders withTableBorder striped highlightOnHover>
+        <Table.Thead>
+          <Table.Tr>
+            <Table.Th style={{ textAlign: "center" }}>Measure</Table.Th>
+            <Table.Th style={{ textAlign: "center" }}>Class 1</Table.Th>
+            <Table.Th style={{ textAlign: "center" }}>Class 2</Table.Th>
+            <Table.Th style={{ textAlign: "center" }}>Class 3</Table.Th>
+          </Table.Tr>
+        </Table.Thead>
+        <Table.Tbody>
+          <Table.Tr>
+            <Table.Td>Gamma Mean</Table.Td>
             {renderStatValues("Gamma", "Mean")}
-          </tr>
-          <tr>
-            <td>Gamma Median</td>
+          </Table.Tr>
+          <Table.Tr>
+            <Table.Td>Gamma Median</Table.Td>
             {renderStatValues("Gamma", "Median")}
-          </tr>
-          <tr>
-            <td>Gamma Mode</td>
+          </Table.Tr>
+          <Table.Tr>
+            <Table.Td>Gamma Mode</Table.Td>
             {renderStatValues("Gamma", "Mode")}
-          </tr>
-        </tbody>
-      </table>
+          </Table.Tr>
+        </Table.Tbody>
+      </Table>
     );
   };
 
@@ -102,19 +103,21 @@ const WineStats = ({ data }) => {
           : "N/A";
       }
 
-      return <td key={`${className}-${measure}-${stat}`}>{value}</td>;
+      return (
+        <Table.Td key={`${className}-${measure}-${stat}`}>{value}</Table.Td>
+      );
     });
   };
 
   return (
     <div>
       <h2>Wine Statistics</h2>
-      <div className="table-container">
-        <div className="table-wrapper">
+      <div style={{ padding: "20px" }}>
+        <div>
           <h3>Flavonoids Statistics</h3>
           {renderFlavonoidsTable()}
         </div>
-        <div className="table-wrapper">
+        <div>
           <h3>Gamma Statistics</h3>
           {renderGammaTable()}
         </div>

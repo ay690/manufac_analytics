@@ -13,30 +13,5 @@
   color: white;
 }
 
-.stats-table {
-  border-collapse: collapse;
-  width: 100%;
-}
 
-.stats-table th,
-.stats-table td {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
 
-.stats-table th {
-  background-color: #f2f2f2;
-}
-
-.table-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 30px;
-}
-
-.table-wrapper {
-  flex: 1;
-  margin: 0 10px;
-}
