@@ -1,9 +1,11 @@
-import './App.css';
+import React from "react";
+import WineStats from "./component/WineStats";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      Hey There!
+      <WineStats />
     </div>
   );
 }
