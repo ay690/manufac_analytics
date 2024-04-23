@@ -1,4 +1,4 @@
-export const data =[
+export const data = [
     {
       "Alcohol": 1,
       "Malic Acid": 14.23,
